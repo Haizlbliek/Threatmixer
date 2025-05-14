@@ -135,7 +135,8 @@ const visualizer = audioContext.createAnalyser();
 visualizer.fftSize = 512;
 const bufferLength = visualizer.frequencyBinCount;
 const dataArray = new Uint8Array(bufferLength);
-const barWidth = canvas.width / bufferLength * 3;
+const barWidth = 3;
+canvas.width = barWidth * bufferLength;
 const canvasContext = canvas.getContext("2d");
 
 // making sure the canvas isn't blurry
